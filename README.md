@@ -11,4 +11,3 @@ The goal of this short, < 5min survey, is to help the TensorFlow team better und
 
 
 
-Participation is of course optional.
