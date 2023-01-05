@@ -6,8 +6,8 @@
 name: Mark stale issues and pull requests
 
 on:
-  schedule:
-  - cron: '35 23 * * *'
+#  schedule:
+#  - cron: '35 23 * * *'
   issues:
     types:
       - reopened
@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - uses: actions/stale@v5
-        with:
+        with: |
           github.rest.issues.addLabels({
             issue_number: context.issue.number,
             owner: context.repo.owner,
