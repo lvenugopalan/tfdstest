@@ -22,11 +22,10 @@ jobs:
       pull-requests: write
 
     steps:
-      - uses: actions/github-script@v6
-        with: |
-          github.rest.issues.addLabels({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            labels: ["stale"]
-          })
+    - uses: actions/stale@v5
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        stale-issue-message: 'Stale issue message'
+        stale-pr-message: 'Stale pull request message'
+        stale-issue-label: 'stale'
+        stale-pr-label: 'pr-stale'
